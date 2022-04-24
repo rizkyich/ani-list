@@ -16,12 +16,12 @@ const AniPaper = ({ container = false, collection = false, children }) => {
           ? {
               gridTemplateColumns: collection
                 ? [
-                    '1fr',
+                    'minmax(0, 1fr)',
                     'repeat(2, minmax(0, 1fr))',
                     'repeat(2, minmax(0, 1fr))',
                     'repeat(3, minmax(0, 1fr))'
                   ]
-                : ['1fr', '1fr', '1fr', 'repeat(2, minmax(0, 1fr))']
+                : ['minmax(0, 1fr)', 'minmax(0, 1fr)', 'minmax(0, 1fr)', 'repeat(2, minmax(0, 1fr))']
             }
           : {})
       })}>

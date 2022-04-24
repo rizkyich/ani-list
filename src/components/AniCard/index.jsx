@@ -25,6 +25,7 @@ const AniCard = ({
   title,
   cover,
   banner,
+  score,
   onClickItem,
   onClickEdit,
   onClickRemove
@@ -74,8 +75,13 @@ const AniCard = ({
           })}>
           {title}
         </h3>
-
-        <div css={scoreCard}></div>
+        
+        {
+          !collection &&
+          <div css={{...scoreCard, backgroundColor: score < 50 ? theme.colors.red : score < 70 ? theme.colors.yellow : theme.colors.green}}>
+            <p>{score || 0}</p>
+          </div>
+        }
       </button>
 
       {(collection || removeOnly) && (
