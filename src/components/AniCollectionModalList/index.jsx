@@ -63,11 +63,14 @@ const AniCollectionModalList = ({ noBulk = false, data, closeModal }) => {
     setSelectedCollectionId(id);
     if (!noBulk) {
       const animeInCollections = collections.find((item) => item.id === id)?.data;
-      const notInCollectionAnime = dataAnime.filter((animeData) => {
-        return !animeInCollections.find((anime) => anime.id === animeData.id);
-      });
 
-      setDataAnime(notInCollectionAnime);
+      if (animeInCollections.length) {
+        const notInCollectionAnime = dataAnime.filter((animeData) => {
+          return !animeInCollections.find((anime) => anime.id === animeData.id);
+        });
+  
+        setDataAnime(notInCollectionAnime);
+      }
     } else {
       const storeAnime = collections.map((item) => {
         return item.id === id ? { ...item, data: [...item.data, data] } : item;
