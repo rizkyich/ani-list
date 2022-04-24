@@ -44,11 +44,11 @@ export const cardTitle = {
 
 export const scoreCard = {
   position: 'absolute',
-  width: "2rem",
+  width: '2rem',
   bottom: 0,
   right: 0,
   padding: '8px',
-  color: "#fff",
+  color: '#fff'
 };
 
 export const collectionButton = {
