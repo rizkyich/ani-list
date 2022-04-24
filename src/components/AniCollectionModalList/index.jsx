@@ -64,7 +64,7 @@ const AniCollectionModalList = ({ noBulk = false, data, closeModal }) => {
     if (!noBulk) {
       const animeInCollections = collections.find((item) => item.id === id)?.data;
       const notInCollectionAnime = dataAnime.filter((animeData) => {
-        return animeInCollections.find((anime) => anime.id === animeData.id);
+        return !animeInCollections.find((anime) => anime.id === animeData.id);
       });
 
       setDataAnime(notInCollectionAnime);
