@@ -38,8 +38,7 @@ const AniCard = ({
     <div css={mq({ ...cardContainer, padding: ['15px 5px', '15px 10px', '15px 10px', '15px'] })}>
       <button
         onClick={() => onClickItem(id)}
-        css={{ ...card, backgroundColor: theme.colors.white }}
-      >
+        css={{ ...card, backgroundColor: theme.colors.white }}>
         <div css={imageCard}>
           {typeof banner === 'string' || !banner ? (
             <AniBanner image={banner} height={120} grayOut />
@@ -72,8 +71,7 @@ const AniCard = ({
             width: ['85%', '85%', '60%'],
             color: theme.colors.primary,
             marginLeft: !collection && ['0px', '0px', '120px']
-          })}
-        >
+          })}>
           {title}
         </h3>
 

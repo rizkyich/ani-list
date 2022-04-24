@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { RiCloseLine } from 'react-icons/ri';
 
-import { darkBg, centered, modal, modalButtonContainer, closeButton } from './styles';
+import { darkBg, centered, modal, closeButton } from './styles';
 
 const AniModal = ({ onClose, children }) => {
   useEffect(() => {

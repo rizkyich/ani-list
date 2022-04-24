@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
 import { mq } from '../../helpers/mediaQueries';
-import { breakPoints } from '../../constants';
 
 const AniPaper = ({ container = false, collection = false, children }) => {
   return (
@@ -25,8 +24,7 @@ const AniPaper = ({ container = false, collection = false, children }) => {
                 : ['1fr', '1fr', '1fr', 'repeat(2, minmax(0, 1fr))']
             }
           : {})
-      })}
-    >
+      })}>
       {children}
     </div>
   );

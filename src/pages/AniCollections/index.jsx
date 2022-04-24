@@ -86,7 +86,7 @@ const AniCollections = () => {
         onClick={() => setShowModal({ content: 'create', id: '' })}
       />
 
-      {Boolean(collections?.length) ? (
+      {collections?.length ? (
         <AniPaper container collection>
           {collections.map((collection, idx) => {
             return (

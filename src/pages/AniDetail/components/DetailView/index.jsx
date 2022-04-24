@@ -25,8 +25,7 @@ const DetailView = ({ anime }) => {
         <h3 css={{ marginBottom: '5px' }}>Description:</h3>
         <div
           css={{ textAlign: 'justify' }}
-          dangerouslySetInnerHTML={{ __html: anime.description }}
-        ></div>
+          dangerouslySetInnerHTML={{ __html: anime.description }}></div>
       </div>
     </div>
   );

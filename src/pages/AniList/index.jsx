@@ -23,7 +23,7 @@ const AniList = () => {
   const [pageSize, setPageSize] = useState(10);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const { error, loading, data } = useQuery(LIST_ANIME, {
+  const { loading, data } = useQuery(LIST_ANIME, {
     variables: {
       page
     }

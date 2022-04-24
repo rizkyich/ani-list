@@ -20,7 +20,7 @@ const MultipleSelect = ({ data, onSelectedAnime }) => {
 
   return (
     <div>
-      {Boolean(data.length) ? (
+      {data.length ? (
         <ul>
           {data?.map((anime, idx) => {
             return (

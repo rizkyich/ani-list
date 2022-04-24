@@ -21,8 +21,7 @@ const AniNavigation = () => {
         width: '230px',
         height: '100vh',
         flexShrink: 0
-      }}
-    >
+      }}>
       {!matchMobileDisplay ? <DekstopNav /> : <MobileNav />}
     </nav>
   );

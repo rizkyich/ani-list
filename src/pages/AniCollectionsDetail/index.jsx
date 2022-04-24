@@ -99,11 +99,11 @@ const AniCollectionsDetail = () => {
 
       {Boolean(collection) && (
         <h2 css={{ color: theme.colors.bold, margin: '20px 0 0 0', textAlign: 'center' }}>
-          {collection.name}'s collection
+          {collection.name}&apos;s collection
         </h2>
       )}
 
-      {Boolean(collection?.data?.length) ? (
+      {collection?.data?.length ? (
         <AniPaper container>
           {collection.data.map((anime, idx) => {
             return (

@@ -22,7 +22,7 @@ const AniModalCreateEdit = ({
   errorInput,
   orientation = 'row'
 }) => {
-  const [defaultState, setDefaultState] = useState(text);
+  const [defaultState] = useState(text);
 
   const handleChangeInput = (e) => {
     e.preventDefault();

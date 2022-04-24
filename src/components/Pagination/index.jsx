@@ -50,8 +50,7 @@ const Pagination = (props) => {
             ...(currentPage === 1 && { ...disabled, ...disabledArrow }),
             padding: ['0px 10px', '0px 10px', '0px 15px']
           })}
-          onClick={onPrevious}
-        >
+          onClick={onPrevious}>
           <div css={{ ...arrow, ...arrowLeft }} />
         </li>
         {paginationRange.map((pageNumber, idx) => {
@@ -63,8 +62,7 @@ const Pagination = (props) => {
                   ...paginationItem,
                   ...dots,
                   padding: ['0px 10px', '0px 10px', '0px 15px']
-                })}
-              >
+                })}>
                 <BsDot />
               </li>
             );
@@ -78,8 +76,7 @@ const Pagination = (props) => {
                 ...(currentPage === pageNumber && selected),
                 padding: ['0px 10px', '0px 10px', '0px 15px']
               })}
-              onClick={() => onPageChange(pageNumber)}
-            >
+              onClick={() => onPageChange(pageNumber)}>
               {pageNumber}
             </li>
           );
@@ -90,8 +87,7 @@ const Pagination = (props) => {
             ...(currentPage === lastPage && { ...disabled, ...disabledArrow }),
             padding: ['0px 10px', '0px 10px', '0px 15px']
           })}
-          onClick={onNext}
-        >
+          onClick={onNext}>
           <div css={{ ...arrow, ...arrowRight }} />
         </li>
       </ul>

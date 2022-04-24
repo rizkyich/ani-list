@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
-import { NavLink, useLocation, useParams, matchRoutes, useMatch } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { AiFillHome } from 'react-icons/ai';
 import { BsFillCollectionFill, BsDot } from 'react-icons/bs';
 
@@ -16,8 +16,7 @@ const MobileNav = () => {
         ...navContainer,
         backgroundColor: theme.colors.primary,
         boxShadow: theme.shadow.primary
-      }}
-    >
+      }}>
       <NavLink
         to="/"
         css={{
@@ -27,8 +26,7 @@ const MobileNav = () => {
           '&:hover': {
             color: theme.colors.secondary
           }
-        }}
-      >
+        }}>
         {location.pathname === '/' && (
           <BsDot
             css={{
@@ -48,8 +46,7 @@ const MobileNav = () => {
           '&:hover': {
             color: theme.colors.secondary
           }
-        }}
-      >
+        }}>
         {location.pathname === '/collections' && (
           <BsDot
             css={{

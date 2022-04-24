@@ -18,7 +18,7 @@ const AnimeDetail = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const { error, loading, data } = useQuery(ANIME_DETAIL, {
+  const { loading, data } = useQuery(ANIME_DETAIL, {
     fetchPolicy: 'no-cache',
     variables: {
       id

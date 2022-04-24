@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useTheme } from '@emotion/react';
 import { useNavigate } from 'react-router-dom';
 
@@ -64,7 +64,7 @@ const AniCollectionModalList = ({ noBulk = false, data, closeModal }) => {
     if (!noBulk) {
       const animeInCollections = collections.find((item) => item.id === id)?.data;
       const notInCollectionAnime = dataAnime.filter((animeData) => {
-        return !Boolean(animeInCollections.find((anime) => anime.id === animeData.id));
+        return animeInCollections.find((anime) => anime.id === animeData.id);
       });
 
       setDataAnime(notInCollectionAnime);
@@ -115,7 +115,7 @@ const AniCollectionModalList = ({ noBulk = false, data, closeModal }) => {
               data={dataAnime}
               onSelectedAnime={(animes) => setSelectedAnimes(animes)}
             />
-          ) : Boolean(collections.length) ? (
+          ) : collections.length ? (
             collections.map((collection, idx) => {
               console.log(collection, data.id, data);
               console.log(collection.data.find((item) => Number(item.id) === data.id));
@@ -157,7 +157,7 @@ const AniCollectionModalList = ({ noBulk = false, data, closeModal }) => {
             <AniButton
               type="submit"
               fullWidth
-              disabled={!Boolean(selectedAnimes.length)}
+              disabled={!selectedAnimes.length}
               text={`Add to ${collections.find((item) => item.id === selectedCollectionId).name}`}
               onClick={handleSubmit}
             />

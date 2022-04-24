@@ -1,6 +1,7 @@
 export const breakPoints = [576, 768, 992, 1200];
 export const mdBreakPoint = breakPoints[1];
-export const specialCharacter = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+//eslint-disable-next-line
+export const specialCharacter = /[!@#$%^&*()_+\-=\]{};':"\\|,.<>?]+/;
 export const theme = {
   colors: {
     primary: '#222831',

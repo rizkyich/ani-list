@@ -16,8 +16,7 @@ const DekstopNav = () => {
       css={{
         ...desktopNav,
         backgroundColor: theme.colors.primary
-      }}
-    >
+      }}>
       <div css={{ ...brandIcon, color: theme.colors.secondary }}>
         <SiAnilist size={70} />
       </div>
@@ -36,8 +35,7 @@ const DekstopNav = () => {
                 backgroundColor: theme.colors.secondary,
                 color: theme.colors.primary
               }
-            }}
-          >
+            }}>
             <AiFillHome />
             <p>Home</p>
           </NavLink>
@@ -61,8 +59,7 @@ const DekstopNav = () => {
                 backgroundColor: theme.colors.secondary,
                 color: theme.colors.primary
               }
-            }}
-          >
+            }}>
             <BsFillCollectionFill />
             <p>Collections</p>
           </NavLink>

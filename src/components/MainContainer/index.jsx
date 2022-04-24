@@ -12,8 +12,7 @@ const MainContainer = ({ children }) => {
         marginLeft: ['0px', '0px', '230px'],
         display: 'flex',
         flexWrap: 'wrap'
-      })}
-    >
+      })}>
       <AniNavigation />
 
       <div
@@ -23,8 +22,7 @@ const MainContainer = ({ children }) => {
           paddingLeft: ['20px', '30px', '30px', '30px', '50px'],
           paddingRight: ['20px', '30px', '30px', '30px', '50px'],
           paddingBottom: '65px'
-        })}
-      >
+        })}>
         {children}
       </div>
     </main>

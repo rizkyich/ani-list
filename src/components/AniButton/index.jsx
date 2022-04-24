@@ -35,8 +35,7 @@ const AniButton = ({ type = 'submit', fullWidth, disabled, text, icon, onClick }
             : theme.colors.primary,
           color: theme.colors.primary
         }
-      }}
-    >
+      }}>
       {Boolean(IconButton) && <IconButton />}
       <p>{text}</p>
     </button>

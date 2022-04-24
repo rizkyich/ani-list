@@ -21,8 +21,7 @@ const BackRoute = () => {
           alignItems: 'center',
           gap: '10px',
           color: theme.colors.bold
-        }}
-      >
+        }}>
         <BiArrowBack size={30} />
         <h3>Go Back</h3>
       </button>

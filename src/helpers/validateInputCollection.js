@@ -1,7 +1,7 @@
 import { specialCharacter } from '../constants';
 
 export const validateInputCollection = (str, arr) => {
-  if (Boolean(arr.find((item) => item.name === str.trim()))) {
+  if (arr.find((item) => item.name === str.trim())) {
     return 'Collection name must unique';
   }
 
