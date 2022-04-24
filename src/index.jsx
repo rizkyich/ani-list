@@ -1,27 +1,34 @@
-
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { ApolloProvider } from "@apollo/client";
-import  {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom"
+import { ApolloProvider } from '@apollo/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from '@emotion/react';
 
-import AnimeList from './pages/AnimeList';
+import MainContainer from './components/MainContainer';
+import AniList from './pages/AniList';
+import AniDetail from './pages/AniDetail';
+import AniCollections from './pages/AniCollections';
+import AniCollectionsDetail from './pages/AniCollectionsDetail';
 
-import { client } from "./ApolloClient";
+import { client } from './ApolloClient';
+import { theme } from './constants';
+
+import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <ApolloProvider client={client}>
+  <ApolloProvider client={client}>
+    <ThemeProvider theme={theme}>
       <BrowserRouter>
+        <MainContainer>
           <Routes>
-            <Route exact path="/" element={<AnimeList/>}/>
+            <Route exact path="/" element={<AniList />} />
+            <Route exact path="/detail/:id" element={<AniDetail />} />
+            <Route exact path="/collections" element={<AniCollections />} />
+            <Route exact path="/collections/:id" element={<AniCollectionsDetail />} />
           </Routes>
+        </MainContainer>
       </BrowserRouter>
-    </ApolloProvider>
-  </React.StrictMode>
+    </ThemeProvider>
+  </ApolloProvider>
 );
