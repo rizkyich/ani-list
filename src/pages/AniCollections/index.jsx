@@ -65,6 +65,11 @@ const AniCollections = () => {
       ]);
     }
 
+    handleCloseModal();
+  };
+
+  const handleCloseModal = () => {
+    setErrorInput('');
     setInputText('');
     setShowModal({ content: '', id: '' });
   };
@@ -108,7 +113,7 @@ const AniCollections = () => {
       )}
 
       {showModal.content && (
-        <AniModal onClose={() => setShowModal({ content: '', id: '' })}>
+        <AniModal onClose={handleCloseModal}>
           <div css={modalContentWrapper}>
             {showModal.content !== 'remove' ? (
               <AniModalCreateEdit
@@ -125,7 +130,7 @@ const AniCollections = () => {
                   collections.find((item) => item.id === showModal.id).name
                 } collection?`}
                 onConfirm={() => handleRemove(showModal.id)}
-                onClose={() => setShowModal({ content: '', id: '' })}
+                onClose={handleCloseModal}
               />
             )}
           </div>

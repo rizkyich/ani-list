@@ -119,8 +119,6 @@ const AniCollectionModalList = ({ noBulk = false, data, closeModal }) => {
             />
           ) : collections.length ? (
             collections.map((collection, idx) => {
-              console.log(collection, data.id, data);
-              console.log(collection.data.find((item) => Number(item.id) === data.id));
               return (
                 <AniButton
                   key={idx}

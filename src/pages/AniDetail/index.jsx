@@ -17,13 +17,22 @@ const AnimeDetail = () => {
   const { id } = useParams();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [reload, setReload] = useState(false);
 
   const { loading, data } = useQuery(ANIME_DETAIL, {
-    fetchPolicy: 'no-cache',
+    fetchPolicy: 'network-only',
     variables: {
       id
     }
   });
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setReload(true);
+    setInterval(() => {
+      setReload(false);
+    }, 500);
+  };
 
   return (
     <div>
@@ -38,15 +47,13 @@ const AnimeDetail = () => {
         />
       )}
 
-      <AniPaper>{loading ? <p>Please wait...</p> : <DetailView anime={data.Media} />}</AniPaper>
+      <AniPaper>
+        {loading || reload ? <p>Please wait...</p> : <DetailView anime={data?.Media} />}
+      </AniPaper>
 
       {isModalOpen && (
-        <AniModal onClose={() => setIsModalOpen(false)}>
-          <AniCollectionModalList
-            noBulk
-            data={data.Media}
-            closeModal={() => setIsModalOpen(false)}
-          />
+        <AniModal onClose={handleCloseModal}>
+          <AniCollectionModalList noBulk data={data?.Media} closeModal={handleCloseModal} />
         </AniModal>
       )}
     </div>
