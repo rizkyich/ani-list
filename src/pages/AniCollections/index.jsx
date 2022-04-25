@@ -58,7 +58,7 @@ const AniCollections = () => {
       setCollections([
         ...collections,
         {
-          id: collections ? (collections.length + 1).toString() : 0,
+          id: collections ? (collections.length + 1).toString() : '1',
           name: inputText.trim(),
           data: []
         }

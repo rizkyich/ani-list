@@ -39,7 +39,7 @@ const AniCollectionModalList = ({ noBulk = false, data, closeModal }) => {
   const handleCreateCollection = () => {
     const prevCollectionsExist = Boolean(collections.length);
     const constructCollection = {
-      id: prevCollectionsExist ? (collections.length + 1).toString() : '0',
+      id: prevCollectionsExist ? (collections.length + 1).toString() : '1',
       name: collectionName.trim(),
       data: []
     };
