@@ -4,5 +4,5 @@ export const button = {
   justifyContent: 'center',
   alignItems: 'center',
   gap: '7.5px',
-  padding: '10px'
+  padding: '13px 10px'
 };
