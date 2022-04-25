@@ -1,24 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
-import { useNavigate } from 'react-router-dom';
 
 import AniBanner from '../../../../components/AniBanner';
-import AniPaper from '../../../../components/AniPaper';
-import AniButton from '../../../../components/AniButton';
-import AniEmptyItem from '../../../../components/AniEmptyItem';
 
-import { usePersistedState } from '../../../../hooks/usePersistedState';
 import { mq } from '../../../../helpers/mediaQueries';
 
 const DetailView = ({ anime }) => {
   const theme = useTheme();
-  const navigate = useNavigate();
-
-  const [collections] = usePersistedState('collection', []);
-
-  const collectionAnime = collections?.filter((item) =>
-    item.data.find((animeData) => anime?.id === animeData.id)
-  );
 
   return (
     <div>
@@ -43,29 +31,6 @@ const DetailView = ({ anime }) => {
           <div
             css={{ textAlign: 'justify' }}
             dangerouslySetInnerHTML={{ __html: anime?.description }}></div>
-        </div>
-
-        <div>
-          <h3 css={{ marginBottom: '5px', marginTop: '25px' }}>Collection Info:</h3>
-          {collectionAnime.length ? (
-            <AniPaper container collection>
-              {collectionAnime?.map((item, idx) => {
-                return (
-                  <div key={idx} css={{ margin: '0 10px' }}>
-                    <AniButton
-                      type="submit"
-                      fullWidth
-                      text={item.name}
-                      onClick={() => navigate(`/collections/${item.id}`)}
-                    />
-                    ;
-                  </div>
-                );
-              })}
-            </AniPaper>
-          ) : (
-            <AniEmptyItem text="Not in any collection yet" />
-          )}
         </div>
       </div>
     </div>

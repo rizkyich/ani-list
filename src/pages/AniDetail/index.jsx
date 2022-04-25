@@ -10,6 +10,7 @@ import AniButton from '../../components/AniButton';
 import AniModal from '../../components/AniModal';
 import AniCollectionModalList from '../../components/AniCollectionModalList';
 import DetailView from './components/DetailView/';
+import DetailCollection from './components/DetailCollection';
 
 import { ANIME_DETAIL } from '../../GraphQL/queries';
 
@@ -17,7 +18,7 @@ const AnimeDetail = () => {
   const { id } = useParams();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [reload, setReload] = useState(false);
+  const [loadCollection, setLoadCollection] = useState(false);
 
   const { loading, data } = useQuery(ANIME_DETAIL, {
     fetchPolicy: 'network-only',
@@ -28,9 +29,9 @@ const AnimeDetail = () => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    setReload(true);
+    setLoadCollection(true);
     setInterval(() => {
-      setReload(false);
+      setLoadCollection(false);
     }, 500);
   };
 
@@ -48,7 +49,14 @@ const AnimeDetail = () => {
       )}
 
       <AniPaper>
-        {loading || reload ? <p>Please wait...</p> : <DetailView anime={data?.Media} />}
+        {loading ? (
+          <p>Please wait...</p>
+        ) : (
+          <>
+            <DetailView anime={data?.Media} />
+            {loadCollection ? <p>Load collection...</p> : <DetailCollection id={id} />}
+          </>
+        )}
       </AniPaper>
 
       {isModalOpen && (
