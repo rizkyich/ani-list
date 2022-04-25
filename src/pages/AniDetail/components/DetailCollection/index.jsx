@@ -24,7 +24,7 @@ const DetailCollection = ({ id }) => {
         <AniPaper container collection>
           {collectionAnime?.map((item, idx) => {
             return (
-              <div key={idx} css={{ margin: '0 10px' }}>
+              <div key={idx} css={{ margin: '10px' }}>
                 <AniButton
                   type="submit"
                   fullWidth
